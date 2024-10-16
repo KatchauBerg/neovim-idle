@@ -1,21 +1,14 @@
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-
-
-require("core.options")
-require("core.keymaps")
-require("core.plugins")
-require("core.plugin_config")
+require("core.plugin_config.colorscheme")
+require("core.plugin_config.lualine")
+require("core.plugin_config.treesitter")
+require("core.plugin_config.telescope")
+require("core.plugin_config.vim-test")
+require("core.plugin_config.completions")
+require("core.plugin_config.mason")
+require("core.plugin_config.lsp_config")
+require("core.plugin_config.gitsigns")
+require("core.plugin_config.copilot")
+require("core.plugin_config.oil")
+require("core.plugin_config.markdown_preview")
+require("core.plugin_config.nvimtree_config")
+require("core.plugin_config.alpha_vim")
